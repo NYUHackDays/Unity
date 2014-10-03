@@ -48,3 +48,51 @@ Animator: Where you define the transitions for each of the items on the Scene - 
 38. Make sure you add a Physics 2D Collider, and not just a Physics because that's in 3D and it won't work!
 39. Click New Component and click New Script, and name it Player with the language Javascript.
 40. Make sure you put the Player script into the Scripts folder. It will be inside the Assets folder so click the Assets folder and drag it into the Scripts.
+
+```
+import UnityEngine;
+import System.Collections;
+
+public class Players extends MonoBehaviour {
+
+	public var speed = 10.0;
+	public var isStanding = false;
+	public var jetSpeed = 15.0;
+	public var maxVelocity : Vector2 = new Vector2(3, 5);
+	
+	private Animator animator;
+
+	private function Start(){
+
+	}
+
+	// Update is called once per frame
+	private function Update () {
+		var forceX = 0f;
+		var forceY = 0f;
+
+		var absVelX = Mathf.Abs (rigidbody2D.velocity.x);
+		var absVelY = Mathf.Abs (rigidbody2D.velocity.y);
+		
+		if (absVelY < 0.1) {
+			isStanding = true;
+		} else {
+			isStanding = false;
+		}
+
+		if (Input.GetKey("left")) {
+			if (absVelX < maxVelocity.x) forceX = -1 * speed;
+			transform.localScale = new Vector3(-1, 1, 1);
+		} else if (Input.GetKey("right")) {
+			if (absVelX < maxVelocity.x) forceX = speed;
+			transform.localScale = new Vector3(1, 1, 1);
+		}
+		
+		if (Input.GetKey("up")) {
+			if (absVelY < maxVelocity.y) forceY = jetSpeed;
+		}
+		
+		rigidbody2D.AddForce (new Vector2 (forceX, forceY));
+	}
+}
+```
