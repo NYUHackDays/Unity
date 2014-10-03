@@ -44,3 +44,6 @@ Animator: Where you define the transitions for each of the items on the Scene - 
 34. We also need to add component to allow the player to land onto it and not just fall through.
 35. Click the Platform on the left click Add Component, and under Physics 2D and add a Box Collider.
 36. Now click play and see the magic.
+37. Wait no Magic? OH we also had to add a Box Collider to the Player so the Colliders can talk to each other!
+38. Make sure you add a Physics 2D Collider, and not just a Physics because that's in 3D and it won't work!
+39. Click New Component and click New Script, and name it Player with the language Javascript.
