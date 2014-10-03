@@ -34,6 +34,13 @@ Animator: Where you define the transitions for each of the items on the Scene - 
 24. Lets add more sprites onto the scene!!
 25. Now find the block-sprites in the sprites folder.
 26. Now drag the block-sprites_4 onto the main Scene.
-27. Now we have the platform on there. Now click on it and zoom and expand the platform using the keys. If you press Shift then you can see the controls.
-28. Now that we have a platform and you've sized it correctly we can begin to add gravity.
-29. If you click play right now the person will just fall right through
+27. Rename the block-sprites_4 to be called Platform.
+28. Now we have the platform on there. Now click on it and zoom and expand the platform using the keys. If you press Shift then you can see the controls.
+29. Now that we have a platform and you've sized it correctly we can begin to add gravity.
+30. If you click play right now the person will just fall right through
+31. If you need to make the camera bigger zoom in and find the controls on it.
+32. Now click the Player, and we're going to add a component which allows it to fall onto the Platform.
+33. Click the Player and Add Component, and click Physics 2D and add a RigidBody2D by clicking it.
+34. We also need to add component to allow the player to land onto it and not just fall through.
+35. Click the Platform on the left click Add Component, and under Physics 2D and add a Box Collider.
+36. Now click play and see the magic.
